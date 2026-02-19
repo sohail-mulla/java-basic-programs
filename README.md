@@ -1,2 +1,4 @@
-# java-basic-programs
-A collection of fundamental Java programs and solutions, documenting my journey from basic syntax to problems.
+# Java Basic Programs
+
+This is my repository for learning Core Java and Data Structures.
+

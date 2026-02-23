@@ -1,4 +1,9 @@
-# The static Keyword in Java
+# Java Practice Folder
+
+This folder contains my practice programs and notes for Java.
+
+
+# TOPIC --> The static Keyword in Java
 
 What is static?
 

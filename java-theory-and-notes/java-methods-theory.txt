@@ -94,5 +94,4 @@ TYPE                            RETURN TYPE    PARAMETERS   EXAMPLE
 
 5. Method names cannot start with numbers.
 
-
 =======================================================================

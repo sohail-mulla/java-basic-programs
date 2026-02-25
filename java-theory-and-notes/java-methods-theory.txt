@@ -1,0 +1,98 @@
+
+=======================================================================
+                  JAVA METHODS: THEORY AND RULES
+=======================================================================
+
+
+
+1. WHAT IS A METHOD?
+
+
+A method is a collection of statements grouped together to perform a 
+specific task. It is a block of code that executes only when it is 
+called. In other programming languages, methods are often referred 
+to as "functions."
+
+
+-----------------------------------------------------------------------
+2. WHY ARE METHODS IMPORTANT?
+-----------------------------------------------------------------------
+
+
+* Code Reusability:  Write code once and call it multiple times.
+
+* Reduces Code Length:  Avoids repeating the same logic.
+
+* Improves Readability:  Makes the program structured and easy to read.
+
+* Easy to Maintain:  If logic changes, you only update the method.
+
+* Modular Programming:  Helps divide large programs into smaller parts.
+
+
+-----------------------------------------------------------------------
+3. METHOD SYNTAX
+-----------------------------------------------------------------------
+
+
+accessSpecifier returnType methodName(parameters) {
+
+    // Method body (Actual code logic)
+    
+    return value;  // Required if returnType is not void
+
+}
+
+
+Example:  public void myAddition() { }
+
+
+-----------------------------------------------------------------------
+4. COMPONENTS OF A METHOD
+-----------------------------------------------------------------------
+
+
+* returnType:  The type of value returned (int, double, String, etc.). 
+  Use "void" if the method returns nothing.
+
+* methodName:  A unique name given to the method.
+
+* parameters:  Input values passed to the method (act as local variables).
+
+* method body:  The actual logic or operations.
+
+* return statement:  Returns a value (except void) and exits the method.
+
+
+-----------------------------------------------------------------------
+5. TYPES OF METHODS (Based on Return Type & Parameters)
+-----------------------------------------------------------------------
+
+TYPE                            RETURN TYPE    PARAMETERS   EXAMPLE
+-----------------------------------------------------------------------
+
+1. No return, No parameters     void           None         void show()
+
+2. No return, With parameters   void           Yes          void sum(int a)
+
+3. With return, No parameters   Returns value  None         int getAge()
+
+4. With return, With parameters Returns value  Yes          int add(int a)
+
+
+-----------------------------------------------------------------------
+6. NAMING CONVENTION RULES
+-----------------------------------------------------------------------
+
+1. Method names should be logical and descriptive.
+
+2. You cannot use Java keywords (like "class" or "static") as names.
+
+3. Method names must start with a lowercase letter.
+
+4. Spaces are not allowed in method names.
+
+5. Method names cannot start with numbers.
+
+
+=======================================================================

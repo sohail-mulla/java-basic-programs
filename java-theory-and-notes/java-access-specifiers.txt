@@ -1,0 +1,95 @@
+
+=======================================================================
+            JAVA ACCESS SPECIFIERS (MODIFIERS)
+=======================================================================
+
+
+
+1. WHAT IS AN ACCESS SPECIFIER?
+
+An Access Specifier in Java is used to control the visibility and 
+accessibility of classes, variables, methods, and constructors. It 
+defines "who" can see and use your code.
+
+
+-----------------------------------------------------------------------
+2. VISIBILITY LEVELS (QUICK REFERENCE TABLE)
+-----------------------------------------------------------------------
+
+Modifier    Same Class   Same Package   Subclass (Ext)  Outside Project
+-----------------------------------------------------------------------
+public         Yes           Yes             Yes             Yes
+protected      Yes           Yes             Yes             No
+default        Yes           Yes             No              No
+private        Yes           No              No              No
+-----------------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------------
+3. DETAILED BREAKDOWN
+-----------------------------------------------------------------------
+
+
+(1) PUBLIC
+* Accessibility:  From anywhere in the project.
+* Use Case:  Used for APIs, library methods, and classes that need to 
+  be shared across the entire application.
+
+
+(2) PRIVATE
+* Accessibility:  Only within the same class.
+* Use Case:  The core of "Data Hiding" and Encapsulation. Variables 
+  should almost always be private.
+
+
+(3) PROTECTED
+* Accessibility:  Within the same package AND by subclasses in other 
+  packages through inheritance.
+* Use Case:  Useful when you want to allow child classes to access 
+  parent data but keep it hidden from the rest of the world.
+
+
+(4) DEFAULT (Package-Private)
+* Accessibility:  Only within the same package. 
+* Note:  This is what Java uses if you do not write any specifier.
+
+
+-----------------------------------------------------------------------
+4. IMPORTANT RULES
+-----------------------------------------------------------------------
+
+* Outer Classes:  Can only be 'public' or 'default'. They CANNOT be 
+  private or protected.
+
+* Class Members:  Variables, methods, and constructors can use all 
+  four levels of access.
+
+* Encapsulation:  'private' is the best friend of Encapsulation.
+
+* Inheritance:  'protected' is specifically designed to support 
+  inheritance across packages.
+
+
+-----------------------------------------------------------------------
+5. CODE REFERENCE: OUTER VS. INNER CLASSES
+-----------------------------------------------------------------------
+
+
+
+public class Demo {        // Outer class: Only public or default allowed
+
+    private class InnerD { // Inner class: Can be public, private, 
+                           // protected, or default
+    }
+
+    private int data = 40; // Private variable: Hidden from other classes
+
+    public void msg() {    // Public method: Visible to everyone
+        System.out.println("Hello Java");
+    }
+}
+
+
+=======================================================================

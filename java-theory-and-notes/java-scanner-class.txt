@@ -1,0 +1,121 @@
+﻿
+=======================================================================
+                JAVA SCANNER CLASS: USER INPUT
+=======================================================================
+
+
+
+1. WHAT IS THE SCANNER CLASS?
+
+The Scanner class is a predefined class in Java located in the 
+'java.util' package. It is used to capture input from the user via 
+the console. It provides various inbuilt methods to read different 
+types of data.
+
+
+-----------------------------------------------------------------------
+2. COMMON SCANNER METHODS
+-----------------------------------------------------------------------
+
+METHOD              USED FOR
+-----------------------------------------------------------------------
+nextByte()          Reads a byte value
+nextShort()         Reads a short value
+nextInt()           Reads an integer
+nextLong()          Reads a long value
+nextFloat()         Reads a float value
+nextDouble()        Reads a double value
+nextBoolean()       Reads a true/false value
+next()              Reads a single word (stops at space)
+nextLine()          Reads the entire line (including spaces)
+-----------------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------------
+3. KEY DIFFERENCE: next() VS. nextLine()
+-----------------------------------------------------------------------
+
+* next():  
+  Reads only one word. It stops scanning as soon as it encounters a 
+  whitespace (space, tab, or newline).
+
+* nextLine():  
+  Reads the entire line including spaces until it reaches the end of 
+  the line (Enter key).
+
+
+-----------------------------------------------------------------------
+4. CODE REFERENCE: BASIC INPUT/OUTPUT
+-----------------------------------------------------------------------
+
+import java.util.Scanner;
+
+class InputDemo {
+    public static void main(String[] args) {
+
+        // Create Scanner object
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter your age: ");
+        int age = sc.nextInt();
+
+        System.out.println("--- Summary ---");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+
+        // Always close the scanner to prevent memory leaks
+        sc.close();
+    }
+}
+
+
+
+
+-----------------------------------------------------------------------
+5. CODE REFERENCE: MATHEMATICAL OPERATIONS
+-----------------------------------------------------------------------
+
+import java.util.Scanner;
+
+class AddNumbers {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        int result = a + b;
+
+        System.out.println("Addition = " + result);
+        
+        sc.close();
+    }
+}
+
+
+-----------------------------------------------------------------------
+6. IMPORTANT INTERVIEW POINTS
+-----------------------------------------------------------------------
+
+* Package:  Always remember to 'import java.util.Scanner;' at the top.
+
+* System.in:  This parameter passed to the constructor tells Java to 
+  read from the Standard Input Stream (Keyboard).
+
+* Resource Management:  Always call 'sc.close()' at the end of yourprogram. 
+  This is a good practice to avoid "Resource Leaks."
+
+* Input Mismatch:  If you use 'nextInt()' but the user types a word, 
+  Java will throw an 'InputMismatchException'.
+
+
+=======================================================================

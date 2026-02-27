@@ -1,0 +1,93 @@
+
+=======================================================================
+            JAVA FINAL KEYWORD, THIS, AND SUPER
+=======================================================================
+
+
+
+1. THE FINAL KEYWORD (Restricting Modification)
+
+The 'final' keyword in Java is used to restrict the user. It provides 
+security and consistency by ensuring that once a value or logic is 
+set, it cannot be altered.
+
+
+
+
+-----------------------------------------------------------------------
+2. WHERE TO APPLY FINAL?
+-----------------------------------------------------------------------
+
+(1) FINAL VARIABLES:
+
+* Meaning:  The variable becomes a CONSTANT.
+* Rule:  Once a value is assigned, it cannot be changed.
+* Example:  final double PI = 3.14;
+
+(2) FINAL METHODS:
+
+* Meaning:  The method cannot be OVERRIDDEN by a child class.
+* Rule:  You can inherit the method, but you cannot change its logic.
+
+
+(3) FINAL CLASSES:
+
+* Meaning:  The class cannot be INHERITED (No child classes allowed).
+* Example:  The 'String' class in Java is a final class.
+
+
+-----------------------------------------------------------------------
+3. THIS VS. SUPER (Reference Keywords)
+-----------------------------------------------------------------------
+
+Both 'this' and 'super' are used to refer to class members, but they 
+point to different locations in the inheritance hierarchy.
+
+-----------------------------------------------------------------------
+FEATURE            THIS KEYWORD               SUPER KEYWORD
+-----------------------------------------------------------------------
+Reference          Points to Current Class    Points to Parent Class
+Members            Accesses current variables Accesses parent variables
+Methods            Calls current methods      Calls parent methods
+Constructors       Calls current constructor  Calls parent constructor
+-----------------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------------
+4. RULES FOR CONSTRUCTORS
+-----------------------------------------------------------------------
+
+When using these keywords to call constructors:
+
+* Syntax:  this() or super().
+* Location:  It MUST be the first statement in the constructor.
+* Conflict:  You cannot use both this() and super() in the same 
+  constructor block.
+
+
+-----------------------------------------------------------------------
+5. WHAT CAN WE CALL WITH THESE KEYWORDS?
+-----------------------------------------------------------------------
+
+By using 'this' and 'super', you can access:
+
+1. Global Variables:  To distinguish between local and class variables.
+2. Methods:  To invoke a specific version of a method.
+3. Constructors:  To chain constructors together (Constructor Chaining).
+
+
+-----------------------------------------------------------------------
+6. INTERVIEW SUMMARY
+-----------------------------------------------------------------------
+
+* final variable :  Initialization is mandatory; value is constant.
+* final method   :  Prevents Overriding.
+* final class    :  Prevents Inheritance.
+* static final   :  Used to create a "Constant" available at class level.
+* this           :  Used to resolve ambiguity between instance and local variables.
+* super		 :  Used to access hidden members of the parent class.
+
+
+=======================================================================

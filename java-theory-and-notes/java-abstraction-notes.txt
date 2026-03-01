@@ -1,0 +1,139 @@
+﻿
+=======================================================================
+           ABSTRACTION IN JAVA: ABSTRACT CLASSES & INTERFACES
+=======================================================================
+
+
+
+1. WHAT IS ABSTRACTION?
+
+Abstraction is an OOP concept that hides implementation details and 
+shows only the essential features to the user. It focuses on WHAT 
+an object does, not HOW it does it.
+
+Real-Life Example:  
+
+When you use an ATM, you see "Withdraw" and "Deposit" buttons. 
+You don't see the internal server logic or the database queries.
+
+
+
+
+-----------------------------------------------------------------------
+2. HOW ABSTRACTION IS ACHIEVED
+-----------------------------------------------------------------------
+
+Java provides two ways to achieve abstraction:
+
+1. Abstract Class (0% to 100% Abstraction)
+
+2. Interface (100% Abstraction - Before Java 8)
+
+
+-----------------------------------------------------------------------
+3. ABSTRACT CLASS: THE PARTIAL BLUEPRINT
+-----------------------------------------------------------------------
+
+An Abstract Class is a class that cannot be instantiated (you cannot 
+create an object of it). It is used as a common base for other classes.
+
+Key Rules:
+
+* Keyword:  Declared using the 'abstract' keyword.
+
+* Methods:  Can have both Abstract methods (no body) and Concrete 
+  methods (with body).
+
+* Variables:  Can have instance variables and static variables.
+
+* Constructor:  Allowed! Used to initialize variables for subclasses.
+
+* Mandatory Rule:  If a class has even one abstract method, the 
+  entire class MUST be declared abstract.
+
+
+
+
+Syntax:
+
+
+public abstract class Animal {
+    String name;
+    Animal() { }                 // Constructor allowed
+    abstract void makeSound();   // Abstract method (no body)
+    void sleep() {               // Concrete method (with body)
+        System.out.println("Sleeping...");
+    }
+}
+
+
+-----------------------------------------------------------------------
+4. INTERFACE: THE 100% BLUEPRINT
+-----------------------------------------------------------------------
+
+An interface is a blueprint of a class used to achieve full 
+abstraction. It defines "Standard Rules" that any implementing class 
+must follow.
+
+Key Rules:
+
+
+* Variables:  Automatically 'public static final'.
+* Methods:  Automatically 'public abstract'.
+* Constructor:  NOT allowed.
+* Multiple Inheritance:  Java supports multiple inheritance through 
+  interfaces only.
+
+Syntax:
+
+interface Payment {
+    void process();  // Automatically public abstract
+}
+
+
+
+
+-----------------------------------------------------------------------
+5. INHERITANCE POSSIBILITIES
+-----------------------------------------------------------------------
+
+* Class  ---extends--->  Class
+* Class  ---implements--->  Interface
+* Interface  ---extends--->  Interface
+
+
+-----------------------------------------------------------------------
+6. ABSTRACTION VS. INTERFACE (THE INTERVIEW TABLE)
+-----------------------------------------------------------------------
+
+FEATURE            ABSTRACT CLASS             INTERFACE
+-----------------------------------------------------------------------
+Abstraction        Partial (0-100%)           Full (100%)
+Methods            Abstract & Concrete        Abstract only (mostly)
+Variables          Instance & Static          Public Static Final only
+Constructor        Allowed                    Not Allowed
+Keyword            'abstract'                 'interface'
+Inheritance        Single inheritance         Multiple inheritance
+-----------------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------------
+7. WHY DO WE NEED THIS?
+-----------------------------------------------------------------------
+
+1. Reduced Complexity:  Hides internal logic to make the API cleaner.
+
+2. Security:  Sensitive data and logic are not exposed.
+
+3. Loose Coupling:  Classes depend on a "contract" (Interface) rather 
+   than a specific class.
+
+4. Maintenance:  You can change the internal implementation without 
+   breaking the code that uses it.
+
+
+=======================================================================
+
+

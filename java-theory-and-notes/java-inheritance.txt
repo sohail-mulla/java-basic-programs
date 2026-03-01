@@ -1,0 +1,120 @@
+﻿
+=======================================================================
+                JAVA INHERITANCE: IS-A RELATIONSHIP
+=======================================================================
+
+
+
+1. WHAT IS INHERITANCE?
+
+
+Inheritance is a core concept of Object-Oriented Programming (OOP). 
+It is a mechanism where one class (Child) acquires all the properties 
+(Variables) and behaviors (Methods) of another class (Parent).
+
+Terminology:
+
+* Parent Class:  Also called the Superclass or Base Class.
+
+* Child Class:  Also called the Subclass or Derived Class.
+
+
+
+
+-----------------------------------------------------------------------
+2. KEY FEATURES
+-----------------------------------------------------------------------
+
+* Keyword      :  Achieved using the 'extends' keyword.
+* Relationship :  Known as an "IS-A" relationship.
+* Purpose      :  Used primarily for Code Reusability and to achieve 
+  	          Run-Time Polymorphism (Method Overriding).
+
+Examples:
+* Dog IS-A Animal
+* Apple IS-A Fruit
+* BMW IS-A Car
+
+
+-----------------------------------------------------------------------
+3. TYPES OF INHERITANCE
+-----------------------------------------------------------------------
+
+1. SINGLE INHERITANCE:  One Parent and one Child.
+   Example:  Car (P) -> BMW (C)
+
+2. MULTILEVEL INHERITANCE:  A chain of inheritance.
+   Example:  Grandfather -> Father -> Son
+
+3. HIERARCHICAL INHERITANCE:  One Parent and multiple Children.
+   Example:  Meta (P) -> Instagram (C), WhatsApp (C), Facebook (C)
+
+4. MULTIPLE INHERITANCE:  One Child with multiple Parents.
+   ***IMPORTANT NOTE:*** Java does NOT support Multiple Inheritance 
+   through classes to avoid the "Diamond Problem" (Ambiguity/Confusion). 
+   This can only be achieved using INTERFACES.
+
+5. HYBRID INHERITANCE:  A combination of two or more types of 
+   inheritance mentioned above.
+
+
+
+
+-----------------------------------------------------------------------
+4. CODE REFERENCE: HIERARCHY EXAMPLE
+-----------------------------------------------------------------------
+
+File: Meta.java (Parent)
+public class Meta {
+    void register() { System.out.println("User Registered"); }
+    void login()    { System.out.println("User Logged In"); }
+}
+
+File: Instagram.java (Child)
+public class Instagram extends Meta {
+    void addStory()    { System.out.println("Story Added"); }
+    void uploadReels() { System.out.println("Reel Uploaded"); }
+}
+
+File: MainClass.java
+public class MainClass {
+    public static void main(String[] args) {
+        Instagram insta = new Instagram();
+        
+        // Accessing Parent properties
+        insta.login(); 
+        
+        // Accessing Child properties
+        insta.uploadReels(); 
+    }
+}
+
+
+-----------------------------------------------------------------------
+5. THE DIAMOND PROBLEM (Interview Special)
+-----------------------------------------------------------------------
+
+If a class inherits from two parents that have the same method name, 
+the compiler gets confused about which parent's method to call. 
+This is called the "Diamond Problem" or "Ambiguity Problem." 
+
+Java avoids this by not allowing a class to 'extends' more than one 
+class at a time.
+
+
+
+
+-----------------------------------------------------------------------
+6. ADVANTAGES
+-----------------------------------------------------------------------
+
+* Reusability        :  Write common code in the Parent class and reuse it 
+                        in all Child classes.
+
+* Method Overriding  :  Allows the Child to provide a specific 
+                        implementation of a generic Parent method.
+
+* Better Organization:  Reflects real-world relationships in the code.
+
+
+=======================================================================

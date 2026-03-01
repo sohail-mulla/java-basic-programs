@@ -1,0 +1,111 @@
+﻿
+=======================================================================
+           DYNAMIC DISPATCH AND OBJECT REFERENCE
+=======================================================================
+
+
+
+1. UNDERSTANDING REFERENCES VS. OBJECTS
+
+
+In Java, there is a big difference between a "Reference Variable" and 
+the "Actual Object." 
+
+Example Breakdown:
+* Student stud;              // Reference creation (The Remote Control)
+* stud = new Student();      // Object creation (The Device)
+
+The reference variable 'stud' sits in the STACK memory, while the 
+actual object 'new Student()' sits in the HEAP memory.
+
+
+-----------------------------------------------------------------------
+2. UPCASTING: PARENT REFERENCE TO CHILD OBJECT
+-----------------------------------------------------------------------
+
+You can use a Parent class or an Interface as a reference for a 
+Child object. This is called "Upcasting."
+
+
+Case A: Using Classes (Inheritance)
+-----------------------------------
+
+class Animal { }
+class Dog extends Animal { }
+
+Animal a = new Dog(); // Parent reference points to Child object
+
+
+
+
+Case B: Using Interfaces (Abstraction)
+--------------------------------------
+
+Authentication auth;
+auth = new GoogleAuth();    // Valid: GoogleAuth IS-A Authentication
+auth = new InstagramAuth();  // Valid: Switch behavior at runtime
+
+
+
+
+-----------------------------------------------------------------------
+3. DYNAMIC METHOD DISPATCH
+-----------------------------------------------------------------------
+
+This is the mechanism where a call to an overridden method is 
+resolved at RUNTIME rather than compile-time.
+
+How it works:
+
+1. Java looks at the Reference Type at compile-time.
+2. Java looks at the Object Type at runtime.
+3. If the method is overridden, the version in the Object's class 
+   is executed.
+
+
+-----------------------------------------------------------------------
+4. OBJECT CREATION VIA METHODS (Factory Pattern)
+-----------------------------------------------------------------------
+
+You can also create and return objects directly from methods. This is 
+a very clean way to handle object creation.
+
+Example:
+
+public Student createStudent() {
+    return new Student(); // Returns a new object to the caller
+}
+
+
+-----------------------------------------------------------------------
+5. WHY IS THIS USEFUL?
+-----------------------------------------------------------------------
+
+* Flexibility: You can write code that works with a "Parent" type, and 
+  it will automatically work with any "Child" type you create later.
+
+* Decoupling: Your code doesn't need to know the specific class; it 
+  only needs to know the Interface or Parent rules.
+
+* Dynamic Switching: You can change the behavior of your application 
+  at runtime by assigning a different child object to the same 
+  parent reference.
+
+
+
+
+-----------------------------------------------------------------------
+6. KEY POINTS FOR INTERVIEWS
+-----------------------------------------------------------------------
+
+1. A Parent reference can hold a Child object, but a Child reference 
+   CANNOT hold a Parent object.
+
+2. Using an Interface as a reference is the best practice for 
+   "Loose Coupling."
+
+3. Only methods present in the Reference Class can be called, but if 
+   overridden, the Object's version runs.
+
+
+=======================================================================

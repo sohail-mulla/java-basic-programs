@@ -9,4 +9,6 @@ public class A {
       //  a = 34;  // --> gives error "Cannot assign a value to final variable 'a' " because a is final.
         System.out.println("Print " + a);
     }
+    
 }
+
